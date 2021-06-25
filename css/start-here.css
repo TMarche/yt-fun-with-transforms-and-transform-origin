@@ -5,8 +5,28 @@
 }
 
 .fancy-link {
+  position: relative;
   text-decoration: none;
   color: #ee6352;
+}
+
+.fancy-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+
+  transition: transform 250ms ease-in;
+  transform-origin: right;
+  transform: scaleX(0);
+}
+
+.fancy-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .button {
